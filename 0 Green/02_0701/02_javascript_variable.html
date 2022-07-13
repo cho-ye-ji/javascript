@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 02_javascript_variable(변수의 개념과 활용 p.37) </title>
+    <style>
+        .p01{ background-color: #ff0; color: #f00;}
+        .p02{ background-color: #ccc; color: #00f;}
+    </style>
+    <script>
+        // 1. 변수 선언하기
+        var box;
+
+        // 2. 변수의 데이터 값 입력하기
+        box = '변수를 사용하여 데이터 출력하기';
+        box = '항상 나중에 저장된 데이터가 남게 된다.';
+
+        // 3.변수에 저장된 데이터 출력하기
+        document.write(box);
+
+        document.write('<hr>');
+
+        // 4.변수의 데이터 한꺼번에 저장하기
+        var box01,box02;
+
+        // 5.변수에 각각 데이터 입력하기
+        box01 = 100; //숫자
+        box02 = 10; //숫자
+
+        // box01, box02 데이터 합산하여 출력하기
+        document.write(box01+box02); // + 기호 의미 1.연산자의 역할과 2.문자열 결합의 의미가 있다.
+
+        document.write('<hr>');
+
+        // 7.변수 선언과 동시에 고정된 값을 넣기
+        const name = '홍길동';
+        // name = '이순신'; -> 변수값을 재할당시 오류가 뜬다.
+
+        // 8. 변수 데이터값 출력하기
+        document.write('<p class="p01">나의 이름은 '+name+'입니다</p>');
+
+        var name01 = '빨강';
+        var name01 = '파랑'; //중복선언으로 오류 없이 잘 출력이 됨(원래 안되어야 하는게 맞음/var의 단점)
+        document.write('<br>'+name01);
+
+        // 변수를 사용하여 사용자가 입력한 데이터를 문장으로 출력하기
+        // let name02 = prompt('이름을 입력하세요. 예)홍길동');
+
+        //출력하기
+        // document.write('<p class="p02">나의 이름은 '+ name02 +' 입니다.</p>');
+
+        document.write('<hr>');
+
+        //'철수'가 사는 지역은 '부산'입니다.
+        let name03 = prompt('이름을 입력하세요. 예)철수'); 
+        let region = prompt('지역을 입력하세요. 예)부산'); 
+
+        document.write('<p>'+name03+'가 사는 지역은 '+region+'입니다.</p>');
+
+        // var 키워드의 단점 : var 키워드는 중복 선언해도 오류가 없다.
+        var a = 10;
+        var a = 5;
+        
+        console.log(a);
+        
+        //let 키워드 - 재선언시 오류가 나는 것을 알려준다.
+        let b = 5;
+        // let b = 15;
+        console.log(b);
+
+        // 지역변수, 전역변수 사용하기
+        
+        var c = 20; // 전역변수, 언제든 호출하면 사용가능
+
+        function text(){
+            var d = 10; //지역변수, 그 해당 지역 내에서 호출시에만 사용가능
+        }
+
+        // 콘솔창에 변수 출력하기
+        console.log(c); // 전역변수이기 떄문에 출력에 문제 없다.
+        console.log(d); // 함수 안에서 선언되어 출력했기 때문에 함수명으로 호출하지 않는 이상 출력 되지 않는다. 오류발생
+
+    </script>
+
+</head>
+<body>
+    <h2> 02_javascript_variable(변수의 개념과 활용 p.37) </h2>
+    <p> 변수란? 변하는 데이터값을 저장하기 위한 일종의 메모리 공간이다. </p>
+    <p> 변수에 대입된 값은 항상 마지막에 저장된 값이 출력된다. </p>
+
+    <h3> 1. 변수의 종류 </h3>
+    <p> 1) 전역변수 : 문서 전체에 영향을 주는 변수 </p>
+    <p> 2) 지역변수 : 함수(function) 또는 스코프 영역내에서 선언되어 사용되는 변수로서 영향력을 가지는 변수(지역화폐) </p>
+
+    <h3> 2.변수 선언 </h3>
+    <p> 변수 선언시 'var', 'let', 'const' 키워드를 변수명 앞에 붙여주어 선언한다. </p>
+    <p> 자바스크립트 최신 버전 es6 에서는 'let', 'const' 사용을 추천한다. </p>
+
+    <h3> 3.변수명 작성시 주의사항 </h3>
+        <ul>
+            <li> 변수명은 반드시 영문 대,소문자로 작성되어야 한다. 예)Aa01,aA01 </li>
+            <li> 변수의 첫 글자는 숫자나 기호가 올 수 없다. </li>
+            <li> 변수명 사이에는 스페이스(공백)을 사용할 수 없다. 예)count 01 </li>
+            <li> 변수명 작성시 예약어는 사용할 수 없다. 예)var if,break 등 이미지 참구 </li>
+            <li> 변수명에는 특수기호를 사용할 수 없다. (단 $와 '_'는 사용가능) 예)$Aa, _Aa</li>
+            <li> 변수명은 의미를 담을 수 있는 이름으로 지정하고, 일명 낙타봉(카멜표기법)표기법으로 작성할 것을 권장한다 </li>
+            <li> 예)imagename(추천하지 않음),imageName(추천함) </li>
+        </ul>
+    
+    <img src="./images/변수예약어.jpg" alt="">
+</body>
+</html>

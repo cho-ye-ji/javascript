@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 01 javascript 의 기초 문법 </title>
+    <style>
+        div{ background-color: #ffff00;}
+    </style>
+    <script>
+        //한 줄 주석 단축키 :ctrl + / , (커서를 놓고 단축키를 누르거나)
+        /* 
+            두줄 주석 (블럭 범위를 지정하고 단축키))
+        */
+       document.write('<div>내부 스크립트로 작성된 내용입니다.</div>');
+    </script>
+
+</head>
+<body>
+     <h2> 01 javascript 기초 문법 p.15 </h2>
+     <ol>
+         <li> 자바스크립트는 html 문서 안에서 삽입되어 작동된다. </li>
+         <li> 기본적으로 css 언어와 같이 head안에서 작성되며,
+             필요에 따라 body 태그 안에서도 작성이 가능하다.
+         </li>
+         <li> 주석을 사용할 때 2가지 종류가 있으며, 한줄 주석은 '//주석내용',
+             2줄 이상의 주석은 '/* 여러줄 주석내용 */' 기호로 사용된다.
+         </li>
+         <li>HTML,CSS 태그 요소는 대소문자를 구별 안하지만, 자바스크립트는 대,소문자를 구별한다.</li>
+         <li> 자바스크립트는 문자 데이터를 입력시 '' 홑따옴표 기호, " "쌍 따옴표 기호를 사용하여 묶어준다.</li>
+         <li> css처럼 문서내에서 작성하는 것을 1.내부 스크립트라고 하며
+             외부 문서로 별도 저장하여 html 문서에 삽인하여 연결하는것을 2. 외부스크립트(파일명.js)라고 한다.
+         </li>
+         <li> 자스의 선언은 script, /script 로 선언하고 종료한다.</li>
+     </ol>
+
+     <!-- 외부 스크립트 연결하기 -->
+    <script src="script/main.js"></script>
+</body>
+</html>

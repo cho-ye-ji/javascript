@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 03_control_03 while, do while, for(반복문) </title>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 400px;
+            border: 1px solid #333;
+        }
+        th,td{
+            border-right: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+    </style>
+    <script>
+        // 1.while 문
+        let n = 1; // 초기값
+        while(n<=30){ //조건식 = n 값이 30보다 작거나 같을때 까지 반복한다.
+            document.write(n);
+            n++; // n에 1을 더하여 조건식에 대입한다.
+        }
+        document.write('<br>1.while문');
+        document.write('<hr>');
+
+        // 2. do while문
+        let n1 = 1; //초기값
+        do{
+            document.write(n1);
+            n1++;
+        }while(n1<=30)
+
+        document.write('<br>2.do while문');
+        document.write('<hr>');
+
+        // 3. for문ㄴ
+
+        for(let n2=1;n2<=30;n2++){
+            document.write(n2);
+        }
+
+        document.write('<br>3.for문');
+        document.write('<hr>');
+
+        // 반복문을 활용, 테이블 구현하기, 달력 출력하기
+        document.write('<table>');
+        document.write('<caption> 달력 테이블 구현하기 </caption>');
+        document.write('<tr><th>일</th></tr><tr><th>월</th></tr><tr><th>화</th></tr><tr><th>수</th></tr><tr><th>목</th></tr><tr><th>금</th></tr><tr><th>토</th></tr>');
+        
+        for(let n3=1;3n<=31;3n++){
+
+            if(n3&7==1){ //홀수칸
+                document.write('<tr>');
+                document.write('<td>'+n3+'</td>'); //각 칸마다 숫자를 대입
+                continue;  //조건에 맞으면 반복
+            }
+
+            if(n3%7==0){ //짝수칸
+                document.write('<td>'+n3+'</td>');//각 칸마다 숫자를 대입
+                document.write('</tr>');
+                continue;
+            }
+            document.write('<td>'+n3+'</td>');//각 셀마다 숫자를 입력
+        }
+        document.write('</table>');
+
+        // 달력 안 나옴 확인하기
+        document.write('<hr>');
+        // 반복문을 2번 작성하여 중첩 반복하게 하기 - 구구단
+    
+    </script>
+</head>
+<body>
+    <h2> 03_control_03 while, do while, for(반복문) </h2>
+    <p> 반복문은 작업을 반복 수행하고자 할 때 사용하며, 조건문이 프로그램을 지적으로 만든다면
+        반복문은 프로그램을 강력하게 만드는 역할을 한다.<br>
+        반복문의 단점은 조건식을 잘못 지정하면 무한 루프에 빠지는 오류가 있으며,
+        브라우저 먹통이 된다.
+    </p>
+    <ul>
+        <li> while - 반복할 조건 </li>
+        <li> do while - 반복할 조건 </li>
+        <li> for문 - 반복 회수 </li>
+    </ul>
+</body>
+</html>

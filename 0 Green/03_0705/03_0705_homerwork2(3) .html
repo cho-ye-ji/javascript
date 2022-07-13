@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 03_0705 실습 예제 3번 과제 풀이, 지출내역 계산하기</title>
+    <style>
+        span{ font-weight:bold; color: #f00;}
+        .txt01{ color: #00f;}
+    </style>
+    <script>
+
+      //  let a = prompt('교통비를 입력하세요. 예)100원,1000원'),b = prompt('식비를 입력하세요. 예)100원,1000원'),c = prompt('음료비를 입력하세요. 예)100원,1000원');
+      //  let d = Number(a)+Number(b)+Number(c);
+      //  let e = d - 10000;
+
+      //  d<10000?document.write('<br><span class="txt01">돈 관리 잘했어요</span>'):document.write('<br><span>'+e+'원</span> 초과');
+
+
+      // 선생님 풀이 / 위에는 나
+
+      // 1. 변수선언하여 데이터 입력
+      let bus = prompt('교통비를 입력하세요. 예)3000');
+      let food = prompt('식비를 입력하세요. 예)7000');
+      let drink = prompt('음료값을 입력하세요. 예)3000');
+
+      // 2. 수식을 작성하여 합계 구하기
+      let sum = Number(bus) + Number(food) + Number(drink); //3000+7000+3000
+
+      // 3. 합계 출력하기
+      document.write(sum+'원 <br>');
+
+      // 4. 조건식을 만들어 출력
+      if(sum<10000){
+         document.write('<p class="txt01"> 돈 관리 잘했어요! </p>');
+      }else{
+         sum = 10000-sum;
+         document.write('<span>'+sum+'원</span> 초과 ');
+      }
+
+
+
+    </script>
+</head>
+<body>
+   <h2> 실습예제3 _ 지출내역 계산하기 </h2>
+   <p> 진영이의 하루 지출 내역은 교통비 a원, 식비 b원, 음료비 c원입니다. <br>
+       삼항 조건연산자를 사용하여 하루 적정 지출 비용인 1만원을 초과하면 '000초과'라고 출력(빨강색)하고, <br>
+       그렇지 않은 경우는 '돈 관리 잘했어요'라고 출력(파랑색)하기
+   </p>
+   <!-- 폼 태그로 활용해보기  -->
+</body>
+</html>

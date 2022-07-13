@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 03_window_object(윈도우 객체) </title>
+</head>
+<body>
+    <h2> 03_window(브라우저)_object(객체) </h2>
+    <p> 브라우저 객체는 사용자가 사용하는 웹브라우저의 창에서 다양한 동작이나 속성을 설정하고자 할 떄 사용하는 객체이다. </p>
+    <p> 사용자의 브라우저 환경에 따른 웹 페이지를 다르게 보여주기 - http://design2010.dothome.co.kr/animal/ </p>
+
+    <h4> Window 객체 </h4>
+    <p> window 객체는 브라우저 객체 중 최상위 객체로서 현재 실행되고 있는 부라우저 창을 나타낸다. </p>
+    <ul>
+        <li> alert(); - 윈도우창에서 경고창(메세지)를 띄울 때 사용 </li>
+        <li> prompt(); - 사용자가 데이터를 입력할 수 있는 명령 프롬프트 창 </li>
+        <li> confirm(); - 질문 내용에 대한 확인,취소를 하고자 할 때 사용(true, false값)</li>
+        <li> setInterval; - 일정 시간동안 작성한 코드나 함수를 실행하고자 할 때 사용</li>
+        <li> clearInterval; - 일정 시간동안 설정한 함수나 코드에 적용된 시간을 제거할 때 사용</li>
+        <li> open(); - url 주소를 삽입하여 현재 페이지가 아닌 새로운 창에서 페이지가 나오도록 함</li>
+    </ul>
+
+    <h4> 버튼을 각각 만들고 테스트하기 </h4>
+    <input type="button" value="alert();" onclick="alert('메세지를 띄웁니다.');" >
+    <input type="button" value="prompt();" onclick="prompt('내용을 입력하기 위한 창_인증번호');">
+    <input type="button" value="confirm();" onclick="confirm('약간에 동의하시겠습니까? 예/아니오');">
+    <!-- window.open('파일경로와 파일이름.확장자','옵션','widht=가로크기, height=세로크기') -->
+    <input type="button" value="open();" onclick="window.open('02_document_object.html','','width=500, height=300');"> <!-- 새창을 위한, 중간 따옴표 잘 보기 -->
+   <input type="button" value="close();" onclick="window.close();">
+
+    <!-- 나머지는 지난 수업 슬라이드에 셋인터벌 클리어 사용할것임 -->
+
+    <h4> footer 영억에 관련 사이트 (패밀리 사이트) 바로가기 구현하기 </h4>
+    <select onchange="siteUrl(this.value)"> <!-- 사용자가 선택한 항목에 대한 값을 함수로 전달한다. onchage..값이 변하면 -->
+        <option value=""> 관련사이트 </option>
+        <option value="http://www.naver.com"> 네이버 </option>
+        <option value="http://www.daum.net"> 다음 </option>
+        <option value="http://www.google.co.kr"> 구글 </option>
+    </select>
+
+    <script>
+        function siteUrl(a){
+            if(a!=""){ //변수값에 저장된 데이터가 있을때만 (비어있지 않을 떄)아래 내용 실행 != 는 not,부정
+                window.open(a,'_self');
+            }
+        }
+        // 시간객체 setInterval (함수명,시간), clearInterval (함수명, 시간);
+        function print01(){
+            console.log(1);
+        }
+
+        let Timer = setInterval(print01,1000); //1초마다 콘솔창에 '1'문자 출력하기
+    </script>
+</body>
+</html>

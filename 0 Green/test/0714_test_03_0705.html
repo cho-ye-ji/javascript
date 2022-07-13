@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> javascript_operater 종류와 활용 p43</title>
+    <style>
+        .txt01{
+            color: #00f;
+            font-size: 30px; font-weight: bold;
+        }
+        .txt02{
+            color: #f00; font-style: italic;
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        //1.산술연산자
+        let a = 10, b = 5; // 데이터입력
+
+        //연산하기
+        let res = a + b; // 10+5=15
+
+        //출력하기
+        document.write(res+'<br>');
+
+        //나머지값 구하기(%)
+        // 질문 왜 0이 남는지 
+        res = a%b; // 10/5 2
+
+        document.write(res+'<br>');
+
+        // 2.문자열 결합연산자 (+)
+        let c = '데이터';
+        res = a+c;
+
+        document.write(res+'<br>'); // 결합연산자로 인식
+
+        // 3. 비교연산자 ==,===,<,>
+        res = a > b; // 10>5
+        document.write(res+'<br>');
+
+        res = a < b; // 10<5
+        document.write(res+'<br>');
+
+        // 4.대입연산자  a=a+b , a= a-b
+        res = a+=b; //res = a = a+b
+        document.write(res+'<br>'); //15
+
+        res = a-=b; // res = a = a-b
+        document.write(res+'<br>');
+        //10 앞에 a는 15라는 값으로 되어있어서, 마지막으로 저장된 데이터가 남는다.
+
+        // 5.증감연산자 ++(1씩증가),--(1씩 감소)
+        res = ++a; // ++를 앞에쓰냐 뒤에쓰냐에 결과 다름 p48참고
+        document.write(res+'<br>');
+
+        // 6.논리연산자 &&(and)-id&pwd일치,||(or),!(not)
+        alert((1>2)&&(1<2)); //1과2 모두 만족하면 true,아니면 false
+        alert((1>2)||(1<2)); //둘중에 하나만 만족하면 true
+        
+
+                // 7.삼한조건연산자 - 조건식? 실행문1:실행문2;
+        //예 1>2?맞습니다:틀립니다;
+         1>2?document.write('조건식이 맞습니다'):document.write('조건문이 틀립니다.');
+
+        //문제1. 사용자가 입력한 점수가 60점 이상이면 '합격', 그렇지 않으면 '불격'
+        //단, 합격은 글자색'파랑색,크기30,굵게' 불합격은 글자색 '빨강,기울게,밑줄'
+
+        let score = prompt('점수를 입력하세요');
+
+        score>61?document.write('합격'):document.write('불합격');
+
+        //풀이
+
+        //입력
+        let num = prompt('점수를 입력하세요.');
+        //2.수식작성하여 연사하여 결과출력
+        num>=60?document.write('<span class="txt01">합격</span>'):document.write('<span class="txt02">불햡격</span>');
+        
+        // 문2. 사용자가 입력한 숫자가 홀수인지 짝수인지 판단하는 수식 작성하기
+        // 문3. 사용자가 입력한 아이디가 'abc'이면 로그인, 틀리면''다시입력'
+
+
+        alert
+    </script>
+</head>
+<body>
+    <h2> 01_javascript_operater 종류와 활용 p43 </h2>
+    <p> 자바스크림트 연산자는 사용자가 조건식을 만들어서 결과를 출력하고자 할 떄
+        사용하는 기호이다
+    </p>
+    <ul>
+        <li> 산술연산자 : + , - , * , / ,%(나머지)</li>
+        <li> 문자열 결합 연산자 : + </li>
+        <li> 대입연산자 : =, +=,-=</li>
+        <li> 증감연산자 : ++ (1씩증가) , --(1씩 감소)</li>
+        <li> 논리 연산자 :  &&(and),||(or),!(not)</li>
+        <li> 삼항조거연산자: 조건식?출력내용1:출력내용2</li>
+        <li> 타입연산자 : type</li>
+    </ul>
+</body>
+</html>

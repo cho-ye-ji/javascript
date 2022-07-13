@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 실습01_함수를 활용한 이미지 배너 슬라이드 </title>
+    <style>
+        *{ margin: 0; padding: 0;}
+        h2, dl, dd, dt{ padding: 10px;}
+        #banner{
+            width: 578px; height: 338px;
+            border: 1px solid #000;
+            position: relative; 
+            margin: 0 auto;
+        }
+        #banner i.fas{
+            font-size: 50px; color:#fff; background: rgba(0, 0, 0, 0.5);
+            padding: 0 4px 0 6px;
+            position: absolute; top: 43%;
+            cursor: pointer; /* 하이퍼링크 걸린 느낌을 주기 위해 마우스 포인터 모양으로 변경함
+            */
+        }
+        #banner .fa-angle-left{ left: 0;}
+        #banner .fa-angle-right{ right: 0;}
+
+        #page{
+            background: #000; color: #fff;
+            padding: 4px 8px;
+            position: absolute;
+            right: 0; bottom: 0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script>
+        // 1.변수선언, 초기화
+        let n = 1;
+
+        // 2. 이전 버튼, 다음 버튼 함수 작성하기
+        function moveLeft(){ //1,4,3,2,1 순으로
+            if(n==1){ //만약 n이 1이라면 == 처음 배너라면
+                n=4; // 마지막 배너가 나오게 하고
+            }else{ // 그렇지 않다면
+                n--; //이전 이미지가 나오도록 한다.
+            }
+            console.log(n);
+            document.getElementById('photo').src="./images01/banner0"+n+".jpg";
+            document.getElementById('page').innerHTML=n+'/4';
+        }
+
+        function moveRight(){ //1,2,3,4,1 순으로
+            if(n==4){
+                n=1;
+            }else{
+                n++;
+            }
+            console.log(n);
+            document.getElementById('photo').src="./images01/banner0"+n+".jpg";
+            document.getElementById('page').innerHTML=n+'/4';
+        }
+    </script>
+</head>
+<body>
+    <h2> 실습01_함수를 활용한 이미지 배너 슬라이드 </h2>
+    <dl>
+        <dt> 구현순서 </dt>
+        <dd> 1. banner 박스 영역을 만들고 이미지 태그를 삽입하여 첫번째 이미지 삽입 </dd>
+        <dd> 2. 아이콘 폰트를 활용하여 좌,우 방향 버튼을 삽입</dd>
+        <dd> 3. 자바스크립트에서 nextImg, prevImg 함수를 각각 작성하여 총 이미지의 갯수를 4장을
+            초과하지 않도록 조건문(if)을 작성한다.
+        </dd>
+        <dd> 4. 좌,우 방향 버튼을 클릭시 각각 함수명을 호출하여 해당 이미지가 나오도록 한다. </dd>
+        <dd> 5. 오른쪽 하단에 페이지 번호를 표시하는 내용 작성</dd>
+        <!-- 플레이 버튼은 웹 접근성 때메 사용해야함 -->
+    </dl>
+
+    <!-- http://design2010.dothome.co.kr/04jquery/ > 하단 font Awesome 주황색 코드 타이틀 밑 삽입-->
+    <!-- 아이콘 사용할때 : 부트스트랩, 폰트어썸-->
+    <div id="banner">
+        <img src="./images01/banner01.jpg" alt="photo" id="photo">
+        <i class="fas fa-angle-left" onclick="moveLeft();"></i>
+        <i class="fas fa-angle-right" onclick="moveRight();"></i>
+        <span id="page"></span>
+    </div>
+    
+    <script>
+        // 페이지 로딩시 처음 번호를 보이게 한다.
+        document.getElementById('page').innerHTML=n+'/4'; //DOM
+
+
+        let Timer = setInterval(moveRight,3000);
+    </script>
+</body>
+</html>

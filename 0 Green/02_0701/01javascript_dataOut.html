@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 01 javascript_dataOut (데이터출력) 방법 </title>
+    <script>
+        // document.write('');
+        document.write('<header><h1><a href="index.html" title="메인페이지로 바로가기">상단로고</a></h1></header>');
+
+        // window 객체
+        window.alert('내용을 확인하세요.');
+
+        // 3.브라우저 개발자 모드 console 모드에서 내용 출력
+        console.log(20220701);
+
+    </script>
+    <style>
+        header{ 
+            height: 50px; background-color: beige;
+            text-align: center; }
+        #txt02{ color: #f00;}
+    </style>
+</head>
+<body>
+    <h2> 자바스크립트에서 데이터 출력 방법 </h2>
+    <p> 자바스크립트에서 다양한 방식으로 데이터를 출력할 수 있다. </p>
+
+    <ul>
+        <li> 1. document 객체에 write 메소드를 사용하여 내용 출력하기 - document.write('출력할 문자 내용');</li>
+        <li> 2. window 객체를 사용하여 메세지 띄우기 - window.alert('메세지 띄우기') </li>
+        <li> 3. 브라우저 개발자 모드(f12) console 모드에서 내용 출력하기 - console.log(출력할 내용)/비공개적 테스트 </li>
+        <li> 4. document 객체의 innerHTML 메서드로 내용 출력하기 - document.getElementById('id명').innerHTML ='출력할 내용'; </li>
+    </ul>
+
+    <form name="" method="" action="">
+        <fieldset>
+            <legend> 로그인 폼 </legend>
+            <p><label for="txt01">아이디:</label><input type="text" id="txt01"></p>
+            <p id="txt02">&nbsp;</p> <!-- &nbsp; = 빈 공간 -->
+            <input type="submit" value="로그인">
+        </fieldset>
+    </form>
+
+    <script>
+        // 4. document 객체를 사용하여 문서 출력, 내용 추가할때 
+        document.getElementById('txt02').innerHTML="아이디를 입력하세요.";
+    </script>
+</body>
+</html>

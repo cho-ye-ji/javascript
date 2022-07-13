@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 03_0705_homework </title>
+    <style>
+        span{ font-weight:bold; color: #f00;}
+        .txt01{ color: #00f;}
+    </style>
+    <script>
+         /*1. 문제 
+        사용자가 입력한 아이디가 'master', 'abcd', 'naver'중 하나만 입력해도 인증이 되며, 
+        패스워드는 '1234'일//(조건) 때 인증이 되도록 결과값이 나오도록 함.*/ 
+        
+        let userId = prompt('아이디를 입력하세요.예)master,abcd,naver')
+        let userPw = prompt('비밀번호를 입력하세요.예)1234')
+
+        switch(userId&&userPw){
+             case'master'&&'1234':document.write('<span>인증완료</span> 되었습니다.');break;
+             case'abcd'&&'1234':document.write('인증 완료');break;
+             case'naver'&&'1234':document.write('인증 완료');break;
+             default:document.write('인증이 <span>완료되지 않았습니다.</span>');
+         }
+
+        /*2. 사용자가 입력한 신장(키)을 이용하여 적정체중 구하기 적정체중 = (본인신장 - 100)*0.9 (수식)
+        *결과 - 적정체중은 " "이며, 현재 적정체중에서 ?? 초과한 것을 알 수 있습니다.*/
+         let num = prompt('신장을 입력하세요. 예)169');
+         let num01 = prompt('무게를 입력하세요. 예)55');
+
+         num = (num-100)*0.9;
+         num01 = num01 - num;
+        //  let result = res - weight;
+         if(num01>=0){
+            document.write('<br>적정체중은 <span class="txt01">'+num+'</span>kg 이며, 현재 체중에서 <span>'+num01+'kg</span> 초과한 것을 알 수 있습니다.');
+         }else if(num01<=0){
+            document.write('<br>적정체중은 <span class="txt01">'+num+'</span>이며, 현재 체중에서 <span>'+num01+'kg</span> 미달입니다.');
+         }
+        
+
+        /*3. 진영이의 하루 지출 내역은 교통비 a원, 식비 b원, 음료비 c원입니다. 
+        삼항 조건연산자를 사용하여 하루 적정 지출 비용인 1만원을 초과하면 '000초과'라고 출력(빨강색)하고, 
+        그렇지 않은 경우는 '돈 관리 잘했어요'라고 출력(파랑색)하기*/
+
+        // 7.삼한조건연산자 - 조건식? 실행문1:실행문2;
+        
+    //     let a = prompt('교통비를 입력하세요. 예)100원,1000원');
+    //     let b = prompt('식비를 입력하세요. 예)100원,1000원');
+    //     let c = prompt('음료비를 입력하세요. 예)100원,1000원');
+     
+    //     let d = a+b+c;
+
+    //     d<10000?document.write('<br><span class="txt01">돈 관리 잘했어요</span>'):document.write('<br><span> 원 초과</span>');
+    //     // d<=10000?document.write('<br><span class="txt01">돈 관리 잘했어요</span>'):document.write('<br><span> 원 초과</span>');
+    //    //if 문
+
+
+       let a = prompt('교통비를 입력하세요. 예)100원,1000원'),b = prompt('식비를 입력하세요. 예)100원,1000원'),c = prompt('음료비를 입력하세요. 예)100원,1000원');
+       let d = Number(a)+Number(b)+Number(c);
+       let e = d - 10000;
+
+       d<10000?document.write('<br><span class="txt01">돈 관리 잘했어요</span>'):document.write('<br><span>'+e+'원</span> 초과');
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

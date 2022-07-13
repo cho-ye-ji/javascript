@@ -1,0 +1,41 @@
+참고 사이트
+1. W3C 온라인학습 - www.w3schools.com
+2. html강좌 - https://opentutorials.org/course/2039
+3. css강좌 - https://opentutorials.org/course/2418
+4. 자바스크립트강좌 - https://opentutorials.org/course/1375
+5. 제이쿼리 공식 사이트 - http://www.jquery.com
+6. 웹접근성연구소 - https://www.wah.or.kr
+7. 네이버 널리- https://nuli.navercorp.com
+8. CSS3 참고자료 - https://poiemaweb.com
+9. 제이쿼리 선택자와 메소드 정리 - https://oscarotero.com/jquery
+10. StatCounter Global Stats - https://gs.statcounter.com
+11. 개발언어 순위사이트 - https://www.tiobe.com/tiobe-index
+★ 12. 자바스크립트 참고서 - https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide
+3. Font Awesome - https://cdnjs.com/libraries/font-awesome
+
+구현 참고사이트
+1. 노랑풍선2. 스타벅스3. 베스킨라빈스
+4. 윙스몰5. 비짓제주6. 미에로화이버
+7. 기아자동차8. 네이버9. 구찌 2018 Summer 콜렉션
+10. 퀵메뉴 - 삼성화재11. 세로스크롤 레이아웃 - 소연12. 세로스크롤 레이아웃 - 금호석유화학
+13. 세로스크롤 레이아웃 - 그러므로
+
+
+
+' ' 문자는 따옴표
+
+alert = 문자인증,id pw 오류, 결제완료, 신청 예스노~ 사용자에서 확인을 받을 떄! !
+&nbsp; = 빈 공간
+
+변수 선언시 'var', 'let', 'const'  ( es6 많이 사용됨 / 내용 : https://www.w3schools.com/js/js_es6.asp )
+자바스크립트 최신버전 es6 에서는 'let', 'const' 사용을 추천한다.
+
+const 는 고정된 값 = 상수임 하나의 값만 넣어야함
+'+변수+'
++  는 연산자 라고 부름, 연결고리
+
+
+
+과제해서 카페에 제출하기
+
+ + 기호 의미 1.연산자의 역할과 2.문자열 결합의 의미가 있다.

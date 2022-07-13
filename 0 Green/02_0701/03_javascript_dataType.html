@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 3_javascript_datatype </title>
+    <script>
+        // 1. 원시형 데이터 입력
+        let s = '10'; // ''는 문자 데이터
+        let n = 10; // 숫자 데이터
+        let b = true; //부울형 데이터
+        let n01; //undefined 데이터 (값이 정의되지 않음)
+        let n02 = null; //값이 없다
+
+        // 2. 참조형 데이터 - 한꺼번에 여러개의 데이터를 저장 가능(배열)
+        let array = [10,20,30,40,50]; //배열, 숫자 5개를 한꺼번에 저장
+        let food = ['사과','바나나','딸기','수박','메론','포도'];
+        let info = ['홍길동','hong','1234','19950201','남자','02-222-1111','서울시 종로구 구기동 4번지']
+
+        // 출력하기
+        document.write(array+'<br>'); // 2 배열 출력, 모든 값
+        document.write(array[0]+'<br>'); // n번째 출력하기, 0부터 시작
+
+        document.write(food+'<br>'); 
+        document.write(food[3]+'<br>'); 
+        document.write('<p>내가 좋아하는 과일은 '+food[2]+' 입니다.</p>');
+        
+        document.write('<p>당신의 주소는 '+info[6]+' 입니다.</p>');
+
+        document.write(s+'<br>');
+        document.write(n+'<br>');
+        document.write(b+'<br>');
+        document.write(n01+'<br>');
+        document.write(n02+'<br>');
+
+        // typeof
+        document.write('변수 s의 유형은 '+typeof(s)+'입니다.<br>');
+        document.write('변수 s의 유형은 '+typeof(n)+'입니다.<br>');
+
+        document.write(typeof(s)+'입니다.<br>');
+        document.write(typeof(n)+'입니다.<br>');
+
+        // 과제
+        // info 배열 데이터를 사용하여 아래와 같은 문장을 출력하시오
+        // '홍길동'의 아이디는 ??이고, 성별은 ??이며, 전화번호는 ??입니다.
+        let info01 = ['hongId','남자','010-111-1111']
+
+        document.write('홍길동의 아이디는 '+info01[0]+'이고, 성별은 '+info01[1]+'이며, 전화번호는'+info01[2]+'입니다.');
+       
+    </script>
+</head>
+<body>
+    <h2> 3 자바스크립트 데이터의 유형 종류 </h2>
+    <ul>
+        <li> 문자데이터(string) </li>
+        <li> 숫자데이터(number) </li>
+        <li> 부울형 (boolean) - true(확인), false(취소) </li>
+        <li> 찾을 수 없는 데이터형(undefined) </li>
+        <li> 값이 없는 데이터(null)  </li>
+        <li> 배열형 데이터(array)  </li>
+        <li> 함수형 데이터(function) </li>
+        <li> 객체(object) - document, window, alert, confirm ... </li>
+    </ul>
+
+    <p> typeof - typeof 연산자는 사용자가 입력한 데이터가 어떤 종류의 형식인지를 알려주는 연산자이며,
+        변수앞에 Number, String등을 작성하면 실제 데이터 형식을 변활할 수 있다. </p>
+</body>
+</html>

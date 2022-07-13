@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 0714 테스트 대비 0630 첫 수업 내용 </title>
+    <style>
+        #event *{margin: 0; padding: 0; }
+        #event{ 
+            width: 480px;
+            margin: 0 auto;
+        }
+        #event header img,#event footer img{ width: 100%; display:block; }
+        #gnb { text-align: center;
+               background-color:#ccc;}
+        #gnb img{ width: 80px;}
+    </style>
+</head>
+<body>
+    <h2> javascript를 이용하여 만들 수 있는 컨텐츠들 </h2>
+
+    <h3> 1.이미지 2장을 사용하여 버튼을 클릭하면 이미지의 src 속성값을 변경하여 다른 이미지 나오게 하기 </h3>
+
+    <img src="../01_0630/img/pic_bulboff.gif" alt="전구 이미지" id="bulb">
+    <input type="button" value="전구켜기" onclick="document.getElementById('bulb').src='../01_0630/img/pic_bulbon.gif'">
+    <input type="button" value="전구끄기" onclick="document.getElementById('bulb').src='../01_0630/img/pic_bulboff.gif'">
+
+    <h3> 버튼을 클릭하면 해당 요소에 글자의 크기를 설정하기 </h3>
+    <p id="fnt"> 건강보험공단,산업인력공단 등 사이트에서 사용하는 글자확대,축소하기 </p>
+    <input type="button" value="글자확대(30px)" onclick="document.getElementById('fnt').style.fontSize='30px'">
+    <input type="button" value="글자축소(15px)" onclick="document.getElementById('fnt').style.fontSize='15px'">
+
+    <h3> 모바일 웹에서 버튼을 클릭시 조명은 on,off 하기 </h3>
+    <article id="event">
+        <header>
+            <img src="../01_0630/img/car_01.jpg" alt="" id="car">
+        </header>
+
+        <nav id="gnb">
+            <img src="../01_0630/img/light_off.png" alt="" onclick="imgOff();">
+            <img src="../01_0630/img/light_on.png" alt="" onclick="imgOn();">
+        </nav>
+        
+        <script>
+            //조명끄기를 클릭시, 호출되어 실행되는 함수
+            function imgOff(){
+                document.getElementById('car').src='../01_0630/img/car01_01.jpg';
+                document.getElementById('gnb').style.backgroundImage='url(../01_0630/img/btn_back.jpg)';
+                document.getElementById('footer').src='../01_0630/img/car01_03.jpg';
+            }
+            //조명켜기를 클릭시, 호출되어 실행되는 함수
+            function imgOn(){
+                document.getElementById('car').src='../01_0630/img/car_01.jpg';
+                document.getElementById('gnb').style.backgroundImage='none';
+                document.getElementById('footer').src='../01_0630/img/car_03.jpg';
+            }
+        </script>
+
+        <footer>
+            <img src="../01_0630/img/car_03.jpg" alt="하단이미지" id="footer">
+        </footer>        
+    </article>
+</body>
+</html>

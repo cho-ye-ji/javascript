@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" >
+    <title> 과제1. Slide 구현하기 </title>
+    <style>
+        *{margin: 0; padding: 0; }
+        p{ font-size: 14px; }
+        h2,dl,dd,dt{ padding: 10px;}
+        #banner{ 
+
+            width: 700px; height: 400px; 
+            margin: 30px auto;
+            position: relative;}
+        .fa-solid {
+            position: absolute; bottom: 4%;
+        }
+        .fa-angle-left{ right: 15%;}
+        .fa-angle-right{ right: 12%;}
+
+        #page{ 
+            font-size: 16px; line-height: 25px;
+            position: absolute; bottom: 2.5%; right: 5%;
+            border-radius: 15px;
+            width: 50px; height:25px; text-align: center;
+            background: rgba(red, rgb(185, 185, 185), rgb(82, 82, 82), 1);
+            color: #000; }
+    </style>
+    <script>
+        // n 초기값 세팅
+        let n = 1;
+
+        function moveLeft(){
+            if(n==1){
+                n=10;
+            }else{
+                n--;
+            }
+            console.log(n);
+            document.getElementById('photo').src="./images/banner"+n+".jpg";
+            document.getElementById('page').innerHTML=n+'/10';
+        }
+        function moveRight(){
+            if(n==10){
+                n=1;
+            }else{
+                n++;
+            }
+            console.log(n);
+            document.getElementById('photo').src="./images/banner"+n+".jpg";
+            document.getElementById('page').innerHTML=n+'/10';
+        }
+    </script>
+</head>
+<body>
+    <div id="banner">
+        <img src="./images/banner1.jpg" alt="img" id="photo">
+        <i class="fa-solid fa-angle-left" onclick="moveLeft();"></i>
+        <i class="fa-solid fa-angle-right" onclick="moveRight();"></i>
+        <span id="page"></span>
+    </div>
+
+    <h2> 실습01_함수를 활용한 이미지 배너 슬라이드 </h2>
+    <dl> 이미지 슬라이드 박스 안에 좌,우 저튼 클릭시 페이지 수 푶시하기</dl>
+    
+    <dl>
+        <dt> 구현순서 </dt>
+        <dd> 1. banner 박스 영역을 만들고 이미지 태그를 삽입하여 첫번째 이미지 삽입 </dd>
+        <dd> 2. 아이콘 폰트를 활용하여 좌,우 방향 버튼을 삽입</dd>
+        <dd> 3. 자바스크립트에서 nextImg, prevImg 함수를 각각 작성하여 총 이미지의 갯수를 4장을
+            초과하지 않도록 조건문(if)을 작성한다.
+        </dd>
+        <dd> 4. 좌,우 방향 버튼을 클릭시 각각 함수명을 호출하여 해당 이미지가 나오도록 한다. </dd>
+        <dd> 5. 오른쪽 하단에 페이지 번호를 표시하는 내용 작성</dd>
+        <!-- 플레이 버튼은 웹 접근성 때메 사용해야함 -->
+    </dl> 
+    <script>
+        document.getElementById('page').innerHTML=n+'/10';
+    </script>
+</body>
+</html>
